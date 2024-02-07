@@ -38,10 +38,14 @@
   background-color: var(--colorImageFgHeaviest);
 }
 
-.inner #webpage-stack {
+:not(.fullscreen).inner #webpage-stack {
   margin-left: 40px;
 }
 
 .inner:has(#tabs-subcontainer:is(.left, .right)) #webpage-stack {
   margin-left: 80px;
+}
+
+.fullscreen.inner #webpage-stack {
+  margin-left: 0px;
 }
