@@ -1,0 +1,92 @@
+/* window */
+body {
+    border-radius: 0;
+}
+
+.win.normal #tabs-tabbar-container.top {
+    padding-top: 5px;
+}
+
+/* SVG disposition */
+button.window-minimize svg {
+    transform: translate(-4px, 0px);
+}
+
+button.window-close svg {
+    transform: translate(0px, 0px); /* Adjust the translation values as needed */
+}
+
+button.window-maximize svg {
+    transform: translate(-4px, 0);
+}
+
+/* Layout of buttons */
+#browser.win .window-buttongroup button svg {
+    display: none;
+    z-index: 2;
+    fill: black;
+    opacity: 0.75;
+    height: 9px !important;
+}
+
+#browser.win .window-buttongroup button {
+    margin: 0 5px 0 3px;
+    position: relative; /* Add this line */
+    top: -1px; /* Add this line */
+}
+
+#browser.win #titlebar {
+    height: 100%;
+}
+
+#browser.win .window-buttongroup {
+    height: 100%;
+    margin: 0;
+    padding: 7px 6px 0 6px;
+}
+
+.stacks-off.fullscreen#browser.win .window-buttongroup,
+.tabs-at-edge#browser.win .window-buttongroup {
+    margin: 0;
+    padding-top: 3px;
+}
+#browser.win .window-buttongroup button,
+#browser.win .window-buttongroup button.window-close {
+	height: 14px;
+    width: 14px;
+	border-radius: 100%;
+}
+#browser.win .window-buttongroup button.window-close {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#browser.win .window-buttongroup:not(:hover) button {
+    opacity: 0.6;
+    background-color: #8e8e93;
+}
+:not(.fullscreen).hasfocus#browser.win .window-buttongroup button.window-minimize{
+    opacity: 1;
+    background-color: #f7bb3f;
+    border-color: #dc9e34;
+}
+.hasfocus#browser.win .window-buttongroup button.window-maximize{
+	opacity: 1;
+    background-color: #34c749;
+    border-color: #1fa42d;
+}
+.hasfocus#browser.win .window-buttongroup button.window-close{
+    opacity: 1;
+    background-color: #f8625e;
+    border-color: #de4947;
+}
+
+/* Animation */
+#browser.win .window-buttongroup button:hover svg {
+    display: block;
+}
+
+.disable-titlebar#browser.win .window-buttongroup button{
+	height: 14px;
+}
