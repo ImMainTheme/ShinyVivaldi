@@ -1,0 +1,7 @@
+.UrlBar-UrlField{
+	text-align: center;
+}
+.UrlField{
+    display: flex;
+    justify-content: center;
+}
