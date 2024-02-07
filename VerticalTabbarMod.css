@@ -1,10 +1,6 @@
 /*
 https://github.com/ImMainTheme/VivaldiCSS
 */
-:root {
-  --TabbarEleH: 40;
-}
-
 .tab-position .tab {
     padding: 2px;
 	}
@@ -16,7 +12,8 @@ https://github.com/ImMainTheme/VivaldiCSS
     min-width: 26px !important;
     min-height: 26px !important;
 	}
-.tab-position .tab .favicon > img, .tab-position .tab .favicon > svg {
+.tab-position .tab .favicon > img,
+.tab-position .tab .favicon > svg {
 	width: 24px !important; 
 	height: 24px !important
 	}
@@ -28,6 +25,15 @@ https://github.com/ImMainTheme/VivaldiCSS
 	bottom: 1px; 
 	left: 3px;
 	}
+/*^^^Tabbar Icon from https://forum.vivaldi.net/topic/51862/css-to-make-tab-icons-larger ^^^*/
+
+
+:root {
+  --TabbarEleH: 40;
+}
+.tabs-left .tab-position .tab, .tabs-right .tab-position .tab{
+	margin: 0px 2px;
+}
 #tabs-container.left .tab-position {
 	Height: calc(var(--TabbarEleH) * 1px) !important;
 	transform: translateX(var(--PositionX)) translateY(calc(((var(--PositionY) + 30px) / 30 - 1px) * var(--TabbarEleH)));
@@ -40,4 +46,3 @@ https://github.com/ImMainTheme/VivaldiCSS
 
 #tabs-container .newtab {position: relative !important; top: calc(((var(--PositionY) + 30px) / 30 - 1px) * var(--TabbarEleH)) !important;}
 
-/*Tabbar Icon from https://forum.vivaldi.net/topic/51862/css-to-make-tab-icons-larger*/
