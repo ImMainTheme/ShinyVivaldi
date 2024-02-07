@@ -37,8 +37,11 @@ button.window-maximize svg {
 
 #browser.win #titlebar {
     height: 100%;
+	min-height: 20px;
 }
 
+#titlebar {
+}
 #browser.win .window-buttongroup {
     height: 100%;
     margin: 0;
@@ -52,8 +55,8 @@ button.window-maximize svg {
 }
 #browser.win .window-buttongroup button,
 #browser.win .window-buttongroup button.window-close {
-	height: 14px;
-    width: 14px;
+	height: calc(var(--uiZoomLevel) * 10px) !important;
+    width: calc(var(--uiZoomLevel) * 10px) !important;
 	border-radius: 100%;
 	opacity: 0.6;
     background-color: #A6A6A6;
@@ -90,6 +93,6 @@ button.window-maximize svg {
     display: block;
 }
 
-.disable-titlebar#browser.win .window-buttongroup button{
-	height: 14px;
+.disable-titlebar#browser.win .window-buttongroup {
+	height: 20px;
 }
