@@ -63,7 +63,7 @@ button.window-maximize svg {
 }
 
 #browser.win .window-buttongroup:not(:hover) button {
-    opacity: 0.2;
+    opacity: 0.6;
     background-color: #8e8e93;
 }
 #browser.win .window-buttongroup:hover button.window-minimize{
