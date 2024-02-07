@@ -55,6 +55,9 @@ button.window-maximize svg {
 	height: 14px;
     width: 14px;
 	border-radius: 100%;
+	opacity: 0.6;
+    background-color: #A6A6A6;
+
 }
 #browser.win .window-buttongroup button.window-close {
 	display: flex;
@@ -62,24 +65,24 @@ button.window-maximize svg {
     justify-content: center;
 }
 
-#browser.win .window-buttongroup:not(:hover) button {
-    opacity: 0.6;
-    background-color: #8e8e93;
-}
-:not(.fullscreen).hasfocus#browser.win .window-buttongroup button.window-minimize{
-    opacity: 1;
-    background-color: #f7bb3f;
-    border-color: #dc9e34;
-}
-.hasfocus#browser.win .window-buttongroup button.window-maximize{
+
+
+:not(.fullscreen).hasfocus#browser.win .window-buttongroup button.window-minimize,
+#browser.win .window-buttongroup:hover button.window-minimize{
+	background-color: #fac536 !important;
 	opacity: 1;
-    background-color: #34c749;
-    border-color: #1fa42d;
 }
-.hasfocus#browser.win .window-buttongroup button.window-close{
-    opacity: 1;
-    background-color: #f8625e;
-    border-color: #de4947;
+.hasfocus#browser.win .window-buttongroup button.window-maximize,
+#browser.win .window-buttongroup:hover button.window-maximize{
+	background: #39ea49 !important;
+	opacity: 1;
+
+}
+.hasfocus#browser.win .window-buttongroup button.window-close,
+#browser.win .window-buttongroup:hover button.window-close{
+	background: #f25056 !important;
+	opacity: 1;
+
 }
 
 /* Animation */
