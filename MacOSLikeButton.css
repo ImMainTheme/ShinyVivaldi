@@ -7,41 +7,30 @@ body {
     padding-top: 5px;
 }
 
-/* SVG disposition */
-button.window-minimize svg {
-    transform: translate(-4px, 0px);
-}
-
-button.window-close svg {
-    transform: translate(0px, 0px); /* Adjust the translation values as needed */
-}
-
-button.window-maximize svg {
-    transform: translate(-4px, 0);
-}
-
 /* Layout of buttons */
 #browser.win .window-buttongroup button svg {
-    display: none;
+    display: block;
     z-index: 2;
     fill: black;
     opacity: 0.75;
-    height: 9px !important;
+	height: 9px !important;
+	position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	transition: top 150ms ease-in-out !important;
 }
 
 #browser.win .window-buttongroup button {
-    margin: 0 5px 0 3px;
+    margin: 0 4px 0 4px;
     position: relative; /* Add this line */
     top: -1px; /* Add this line */
 }
 
 #browser.win #titlebar {
     height: 100%;
-	min-height: 20px;
 }
 
-#titlebar {
-}
 #browser.win .window-buttongroup {
     height: 100%;
     margin: 0;
@@ -55,21 +44,12 @@ button.window-maximize svg {
 }
 #browser.win .window-buttongroup button,
 #browser.win .window-buttongroup button.window-close {
-	height: calc(var(--uiZoomLevel) * 10px) !important;
-    width: calc(var(--uiZoomLevel) * 10px) !important;
+	height: 12px !important;
+    width: 12px !important;
 	border-radius: 100%;
 	opacity: 0.6;
     background-color: #A6A6A6;
-
 }
-#browser.win .window-buttongroup button.window-close {
-	display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
 :not(.fullscreen).hasfocus#browser.win .window-buttongroup button.window-minimize,
 #browser.win .window-buttongroup:hover button.window-minimize{
 	background-color: #fac536 !important;
@@ -90,9 +70,24 @@ button.window-maximize svg {
 
 /* Animation */
 #browser.win .window-buttongroup button:hover svg {
-    display: block;
+    top: 50% !important;   
 }
 
 .disable-titlebar#browser.win .window-buttongroup {
-	height: 20px;
+	visibility: visible !important;
+	display: flex !important;
+	position: absolute !important;
+	top: 2px !important;
+	left: unset !important;
+	right: 0 !important;
+	padding-top: 10px !important;
+	padding-bottom: 2px !important;
+	padding-right: 8px !important;
+	padding-left: 2px !important;
+	height: auto;
+}
+
+/* Anti scaling */
+#browser .window-buttongroup{
+	scale: calc( 1.1 / var(--uiZoomLevel));	
 }
