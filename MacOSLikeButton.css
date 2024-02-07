@@ -14,27 +14,23 @@ body {
     fill: black;
     opacity: 0.75;
 	height: 9px !important;
+	width: 9px !important;
 	position: absolute;
     top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
 	transition: top 150ms ease-in-out !important;
+	opacity: 0;
 }
 
 #browser.win .window-buttongroup button {
-    margin: 0 4px 0 4px;
+    margin-left: calc(1 / var(--uiZoomLevel) * 4px);
+	margin-right: calc(1 / var(--uiZoomLevel) * 4px);
     position: relative; /* Add this line */
-    top: -1px; /* Add this line */
 }
-
-#browser.win #titlebar {
-    height: 100%;
-}
-
 #browser.win .window-buttongroup {
-    height: 100%;
-    margin: 0;
-    padding: 7px 6px 0 6px;
+  padding: 0px 5px 0px 5px !important;
+  background: none !important;
 }
 
 .stacks-off.fullscreen#browser.win .window-buttongroup,
@@ -44,8 +40,8 @@ body {
 }
 #browser.win .window-buttongroup button,
 #browser.win .window-buttongroup button.window-close {
-	height: 12px !important;
-    width: 12px !important;
+	height: 14px !important;
+    width: 14px !important;
 	border-radius: 100%;
 	opacity: 0.6;
     background-color: #A6A6A6;
@@ -71,23 +67,23 @@ body {
 /* Animation */
 #browser.win .window-buttongroup button:hover svg {
     top: 50% !important;   
+	opacity: 1;
 }
 
-.disable-titlebar#browser.win .window-buttongroup {
+#browser.win .window-buttongroup{
 	visibility: visible !important;
 	display: flex !important;
 	position: absolute !important;
-	top: 2px !important;
+	top: 50% !important;
 	left: unset !important;
 	right: 0 !important;
-	padding-top: 10px !important;
-	padding-bottom: 2px !important;
-	padding-right: 8px !important;
-	padding-left: 2px !important;
-	height: auto;
+	padding-top: 4px !important;
+	padding-bottom: 4px !important;
+	padding-right: 10px !important;
+	padding-left: 4px !important;
+	height: auto !important;
+	transform: translateY(-60%);
 }
-
-/* Anti scaling */
-#browser .window-buttongroup{
-	scale: calc( 1.1 / var(--uiZoomLevel));	
+#browser.win #titlebar {
+    height: 100%;
 }
